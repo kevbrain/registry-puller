@@ -1,0 +1,11 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: Trigger
+metadata:
+  name: registry-puller-dev-trigger
+  namespace: registry-puller-dev
+spec:
+  serviceAccountName: pipeline
+  bindings:
+    - ref: registry-puller-dev-triggerbinding
+  template:
+    ref: registry-puller-dev-triggertemplate

@@ -1,0 +1,9 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: EventListener
+metadata:
+  name: registry-puller-dev-eventlistener
+  namespace: registry-puller-dev
+spec:
+  serviceAccountName: pipeline
+  triggers:
+    - triggerRef: registry-puller-dev-trigger
